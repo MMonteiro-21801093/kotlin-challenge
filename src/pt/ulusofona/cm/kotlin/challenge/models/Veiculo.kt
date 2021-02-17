@@ -1,17 +1,22 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
-import java.time.LocalDate
+import java.util.*
 
-abstract class Veiculo(identificador: String?) : Movimentavel {
-    var identificador: String? = null
-    var posicao: Posicao? = null
-    var dataDeAquisicao: LocalDate
+
+
+
+
+abstract class Veiculo(var identificador: String) : Movimentavel {
+    var posicao: Posicao
+    var dataDeAquisicao: Date
 
     init {
-        this.identificador = identificador
         this.posicao = Posicao(0, 0)
-        this.dataDeAquisicao = LocalDate.now()
+       // val formatter = SimpleDateFormat("dd/MM/yyyy")
+       // var date = Date()
+        //System.out.println(formatter.format(date));
+        this.dataDeAquisicao = Date()
     }
 
 

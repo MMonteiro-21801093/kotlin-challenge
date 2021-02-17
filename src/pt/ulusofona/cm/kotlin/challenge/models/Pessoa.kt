@@ -5,13 +5,14 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
+import java.text.SimpleDateFormat
 
 import java.time.LocalDate
 
 import java.time.temporal.ChronoUnit
-import java.util.ArrayList
+import java.util.*
 
-class Pessoa( val nome: String, private val dataDeNascimento: LocalDate) : Movimentavel {
+class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentavel {
     var veiculos: ArrayList<Veiculo> = ArrayList()
     var carta: Carta? = null
     var posicao: Posicao
@@ -62,7 +63,11 @@ class Pessoa( val nome: String, private val dataDeNascimento: LocalDate) : Movim
 
     @Throws(MenorDeIdadeException::class)
     fun tirarCarta() {
-        val menorDeIdade = ChronoUnit.YEARS.between(dataDeNascimento, LocalDate.now())
+        val formatter = SimpleDateFormat("dd/MM/yyyy")
+
+        val dtNasc = formatter.format(dataDeNascimento)
+
+        val menorDeIdade = ChronoUnit.YEARS.between(LocalDate.parse(dtNasc), LocalDate.now())
         if (menorDeIdade < 18) {
             throw MenorDeIdadeException("Não pode tirar a carta, Menor de idade")
         } else {
