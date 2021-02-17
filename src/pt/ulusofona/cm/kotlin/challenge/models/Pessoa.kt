@@ -46,7 +46,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
         for (veiculo in veiculos) {
             if (veiculo.identificador.equals(identificador) ) {
                 if (veiculo.requerCarta()!! && !temCarta()) {
-                    throw PessoaSemCartaException("Nome da Pessoa não tem carta para conduzir o veículo indicado")
+                    throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
                 }
                 veiculo.moverPara(x, y)
                 break
@@ -59,12 +59,14 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     }
 
     override fun toString(): String {
-        return "Pessoa | $nome | $dataDeNascimento | Posicao | x:${this.posicao.x}| y:${this.posicao.y}"
+        val formatter = SimpleDateFormat("dd-MM-yyyy")
+        val dtNasc = formatter.format(dataDeNascimento)
+        return "Pessoa | $nome | $dtNasc | Posicao | x:${this.posicao.x}| y:${this.posicao.y}"
     }
 
     @Throws(MenorDeIdadeException::class)
     fun tirarCarta() {
-        val formatter = SimpleDateFormat("dd/MM/yyyy")
+        val formatter = SimpleDateFormat("dd-MM-yyyy")
 
         val dtNasc = formatter.format(dataDeNascimento)
 

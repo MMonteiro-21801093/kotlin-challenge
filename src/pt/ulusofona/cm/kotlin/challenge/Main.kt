@@ -3,13 +3,19 @@ package pt.ulusofona.cm.kotlin.challenge
 import pt.ulusofona.cm.kotlin.challenge.models.*
 import java.time.LocalDate
 import java.util.*
+import java.text.SimpleDateFormat
+
+
+
 
 val veiculos: ArrayList<Veiculo> = ArrayList()
 val pessoas: ArrayList<Pessoa> = ArrayList()
 fun main() {
 
-
-   /* val p1 = Pessoa("Luis", LocalDate.of(1999, 8, 21))
+    val formatter = SimpleDateFormat("dd-MM-yyyy")
+    val date = Date()
+    println(formatter.format(date))
+    /* val p1 = Pessoa("Luis", LocalDate.of(1999, 8, 21))
     val p2 = Pessoa("João", LocalDate.of(2015, 5, 25))
     val p3 = Pessoa("Maria", LocalDate.of(1980, 1, 1))
     val p4 = Pessoa("Pedro", LocalDate.of(1972, 2, 1))
@@ -30,9 +36,9 @@ fun main() {
     veiculos.add(bicicleta2)
     veiculos.add(bicicleta3)*/
 
-
- 
-
+   /* val p4 = Pessoa("Pedro", Date())
+      p4.moverPara(5,7)
+    p4.moverPara(5,7)*/
     var opcaoSelecionada :String ? = null
     mostraMenu()
     opcaoSelecionada = readLine()!!.toString()

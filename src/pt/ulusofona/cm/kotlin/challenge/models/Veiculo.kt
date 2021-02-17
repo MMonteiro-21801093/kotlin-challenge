@@ -13,13 +13,13 @@ abstract class Veiculo(var identificador: String) : Movimentavel {
 
     init {
         this.posicao = Posicao(0, 0)
-       // val formatter = SimpleDateFormat("dd/MM/yyyy")
-       // var date = Date()
+       /* val formatter = SimpleDateFormat("dd/MM/yyyy")
+        var date = Date()*/
         //System.out.println(formatter.format(date));
         this.dataDeAquisicao = Date()
     }
 
 
-    abstract fun requerCarta(): Boolean?
+    abstract fun requerCarta(): Boolean
 
 }

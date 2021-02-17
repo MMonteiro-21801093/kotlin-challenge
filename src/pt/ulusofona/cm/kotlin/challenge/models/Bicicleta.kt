@@ -7,12 +7,12 @@ class Bicicleta(identificador: String) : Veiculo(identificador) {
         return "Bicicleta |$identificador | $dataDeAquisicao | Posicao | x:$posicao.x | y:$posicao.y"
     }
 
-    override fun requerCarta(): Boolean? {
+    override fun requerCarta(): Boolean {
         return false
     }
 
     @Throws(AlterarPosicaoException::class)
     override fun moverPara(x: Int, y: Int) {
-        posicao!!.alterarPosicaoPara(x, y)
+        posicao.alterarPosicaoPara(x, y)
     }
 }
