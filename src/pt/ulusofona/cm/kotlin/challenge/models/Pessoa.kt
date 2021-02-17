@@ -93,7 +93,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
         }
     }
 
-    @Throws(AlterarPosicaoException::class)
+
     override fun moverPara(x: Int, y: Int) {
         posicao.alterarPosicaoPara(x, y)
     }

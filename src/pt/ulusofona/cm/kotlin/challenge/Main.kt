@@ -65,5 +65,8 @@ fun main() {
     println(p4.posicao)
 
     p4.desligaCarro(carro3)*/
+
+    val p5 = Pessoa("Joao", Date())
+
     }
 

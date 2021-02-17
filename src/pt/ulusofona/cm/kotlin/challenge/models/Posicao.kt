@@ -1,10 +1,10 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
+import java.util.ArrayList
 
-class Posicao( x: Int,   y: Int) {
-    var x:Int = 0
-    var y:Int = 0
+class Posicao( var x: Int, var  y: Int) {
+
     @Throws(AlterarPosicaoException::class)
     fun alterarPosicaoPara(x: Int, y: Int) {
         if (this.x == x && this.y == y) {
@@ -17,5 +17,9 @@ class Posicao( x: Int,   y: Int) {
 
     override fun toString(): String {
         return "Posicao | x:${this.x} | y:${this.y}"
+    }
+    init {
+        this.x =x
+        this.y = y
     }
 }
