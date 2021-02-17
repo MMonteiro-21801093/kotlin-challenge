@@ -3,7 +3,7 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import java.text.SimpleDateFormat
 
-class Bicicleta(identificador: String) : Veiculo(identificador) {
+ class Bicicleta(identificador: String) : Veiculo(identificador) {
     override fun toString(): String {
         val formatter = SimpleDateFormat("dd-MM-yyyy")
         val dtAqs = formatter.format(dataDeAquisicao)

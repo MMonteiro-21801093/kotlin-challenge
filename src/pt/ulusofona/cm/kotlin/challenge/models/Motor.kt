@@ -12,7 +12,7 @@ class Motor(var cavalos: Int, var cilindrada: Int): Ligavel {
         return "Motor | $cavalos | $cilindrada"
     }
 
- 
+
     override fun ligar() {
         if (this.ligado) {
             throw VeiculoLigadoException("Veiculo já se encontra ligado")

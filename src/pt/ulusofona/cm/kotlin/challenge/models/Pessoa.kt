@@ -16,7 +16,7 @@ import java.time.format.DateTimeFormatter
 
 
 
-class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentavel {
+data class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentavel {
     var veiculos: ArrayList<Veiculo> = ArrayList()
     var carta: Carta? = null
     var posicao: Posicao
