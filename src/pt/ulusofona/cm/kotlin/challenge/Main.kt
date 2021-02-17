@@ -59,7 +59,10 @@ fun main() {
 
     println(p5.pesquisarVeiculo("12-11-AA"))
 
-
+    p4.moverPara(0,0)
+    p4.moverPara(0,0)
+    p4.moverPara(0,0)
+    p4.moverPara(0,0)
 
     p4.desligaCarro(carro3)
     }

@@ -55,7 +55,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
         for (veiculo in veiculos) {
             if (veiculo.identificador.equals(identificador) ) {
-                if (veiculo.requerCarta()!! && !temCarta()) {
+                if (veiculo.requerCarta() && !temCarta()) {
                     throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
                 }
                 veiculo.moverPara(x, y)
@@ -81,9 +81,6 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
 
         val dateString =formatter.format(dataDeNascimento)
 
-        //string to date
-
-        //string to date
         val localDate = LocalDate.parse(dateString, dateTimeFormatter)
 
 
@@ -102,7 +99,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     }
 
     init {
-        posicao = Posicao(0, 0)
+        posicao = Posicao()
         veiculos = ArrayList()
     }
 }
