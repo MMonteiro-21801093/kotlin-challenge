@@ -39,6 +39,10 @@ fun main() {
    /* val p4 = Pessoa("Pedro", Date())
       p4.moverPara(5,7)
     p4.moverPara(5,7)*/
+
+    val p4 = Pessoa("Pedro", Date())
+    p4.tirarCarta()
+
     var opcaoSelecionada :String ? = null
     mostraMenu()
     opcaoSelecionada = readLine()!!.toString()

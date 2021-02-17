@@ -11,6 +11,10 @@ import java.time.LocalDate
 
 import java.time.temporal.ChronoUnit
 import java.util.*
+import java.time.format.DateTimeFormatter
+
+
+
 
 class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentavel {
     var veiculos: ArrayList<Veiculo> = ArrayList()
@@ -61,16 +65,24 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     override fun toString(): String {
         val formatter = SimpleDateFormat("dd-MM-yyyy")
         val dtNasc = formatter.format(dataDeNascimento)
-        return "Pessoa | $nome | $dtNasc | Posicao | x:${this.posicao.x}| y:${this.posicao.y}"
+        return "Pessoa | $nome | $dtNasc | Posicao | x:${this.posicao.x} | y:${this.posicao.y}"
     }
 
     @Throws(MenorDeIdadeException::class)
     fun tirarCarta() {
-        val formatter = SimpleDateFormat("dd-MM-yyyy")
+        val dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+        val formatter = SimpleDateFormat("dd/MM/yyyy")
 
-        val dtNasc = formatter.format(dataDeNascimento)
+        val dateString =formatter.format(dataDeNascimento)
 
-        val menorDeIdade = ChronoUnit.YEARS.between(LocalDate.parse(dtNasc), LocalDate.now())
+        //string to date
+
+        //string to date
+        val localDate = LocalDate.parse(dateString, dateTimeFormatter)
+
+
+
+        val menorDeIdade = ChronoUnit.YEARS.between(localDate, LocalDate.now())
         if (menorDeIdade < 18) {
             throw MenorDeIdadeException("Não pode tirar a carta, Menor de idade")
         } else {
