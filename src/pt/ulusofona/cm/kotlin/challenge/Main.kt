@@ -67,6 +67,9 @@ fun main() {
     p4.desligaCarro(carro3)*/
 
     val p5 = Pessoa("Joao", Date())
-
+    val  bicicleta3: Veiculo = Bicicleta("1119912")
+    bicicleta3.moverPara(44322,212121)
+    bicicleta3.moverPara(44322,212121)
+    println(bicicleta3)
     }
 
