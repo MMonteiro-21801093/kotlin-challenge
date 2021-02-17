@@ -35,6 +35,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
             if (veiculo.identificador.equals(identificador) ) {
                 comprador.comprarVeiculo(veiculo)
                 veiculos.remove(veiculo)
+
                 break
             }
         }

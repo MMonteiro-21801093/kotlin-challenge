@@ -2,7 +2,8 @@ package pt.ulusofona.cm.kotlin.challenge
 
 import pt.ulusofona.cm.kotlin.challenge.models.*
 import java.time.LocalDate
-import java.util.ArrayList
+import java.util.*
+
 val veiculos: ArrayList<Veiculo> = ArrayList()
 val pessoas: ArrayList<Pessoa> = ArrayList()
 fun main() {
@@ -30,7 +31,7 @@ fun main() {
     veiculos.add(bicicleta3)*/
 
 
-
+ 
 
     var opcaoSelecionada :String ? = null
     mostraMenu()
@@ -78,6 +79,7 @@ fun pesquisarVeiculo() {
         if(pessoa.nome.equals(nomePessoa)){
             println("Introduza o identificador do veiculo")
             val idVeiculo :String = readLine().toString()
+
             println(pessoa.pesquisarVeiculo(idVeiculo))
         }
     }
