@@ -13,11 +13,7 @@ class Motor(var cavalos: Int, var cilindrada: Int): Ligavel {
 
     override fun ligar() {
         if (this.ligado) {
-            try {
-                throw VeiculoLigadoException("Veiculo já se encontra ligado")
-            } catch (e: VeiculoLigadoException) {
-                e.printStackTrace()
-            }
+            throw VeiculoLigadoException("Veiculo já se encontra ligado")
         } else {
             this.ligado= true
         }
@@ -25,11 +21,7 @@ class Motor(var cavalos: Int, var cilindrada: Int): Ligavel {
 
     override fun desligar() {
         if (!this.ligado) {
-            try {
-                throw VeiculoDesligadoException("Veiculo já se encontra desligado")
-            } catch (e: VeiculoDesligadoException) {
-                e.printStackTrace()
-            }
+            throw VeiculoDesligadoException("Veiculo já se encontra desligado")
         } else {
             this.ligado = false
         }

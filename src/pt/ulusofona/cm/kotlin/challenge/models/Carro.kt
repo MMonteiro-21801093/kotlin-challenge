@@ -17,7 +17,6 @@ class Carro(identificador: String, var motor: Motor) : Veiculo(identificador)  {
         posicao.alterarPosicaoPara(x, y)
         motor.desligar()
     }
-
     override fun toString(): String {
         val formatter = SimpleDateFormat("dd-MM-yyyy")
         val dtAqs = formatter.format(dataDeAquisicao)

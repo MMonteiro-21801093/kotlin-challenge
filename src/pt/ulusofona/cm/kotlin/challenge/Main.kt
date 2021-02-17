@@ -40,9 +40,22 @@ fun main() {
       p4.moverPara(5,7)
     p4.moverPara(5,7)*/
 
-    val p4 = Pessoa("Pedro", Date())
-    p4.tirarCarta()
+    val carro1: Veiculo = Carro("12-88-XG", Motor(75, 1200))
+    val carro2: Veiculo = Carro("44-18-AF", Motor(100, 1600))
+    val carro3: Veiculo = Carro("12-11-AA", Motor(75, 1200))
+    val  bicicleta1: Veiculo = Bicicleta("1839912")
+    val  bicicleta2: Veiculo = Bicicleta("1839112")
+    val  bicicleta3: Veiculo = Bicicleta("1119912")
+    veiculos.add(carro1)
+    veiculos.add(carro2)
+    veiculos.add(carro3)
+    veiculos.add(bicicleta1)
+    veiculos.add(bicicleta2)
+    veiculos.add(bicicleta3)
 
+    for(v in veiculos){
+        println(v.toString())
+    }
     var opcaoSelecionada :String ? = null
     mostraMenu()
     opcaoSelecionada = readLine()!!.toString()
