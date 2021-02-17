@@ -99,7 +99,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     }
 
     init {
-        posicao = Posicao()
+        posicao = Posicao(0,0)
         veiculos = ArrayList()
     }
 }

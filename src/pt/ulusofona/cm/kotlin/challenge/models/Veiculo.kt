@@ -12,7 +12,7 @@ open abstract class Veiculo(var identificador: String) : Movimentavel {
     var dataDeAquisicao: Date
 
     init {
-        this.posicao = Posicao()
+        this.posicao = Posicao(0,0)
        /* val formatter = SimpleDateFormat("dd/MM/yyyy")
         var date = Date()*/
         //System.out.println(formatter.format(date));
