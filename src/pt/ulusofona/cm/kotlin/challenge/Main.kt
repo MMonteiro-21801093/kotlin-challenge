@@ -38,7 +38,7 @@ fun main() {
       p4.moverPara(5,7)
     p4.moverPara(5,7)*/
 
-    val carro1: Veiculo = Carro("12-88-XG", Motor(75, 1200))
+  /*  val carro1: Veiculo = Carro("12-88-XG", Motor(75, 1200))
     val carro2: Veiculo = Carro("44-18-AF", Motor(100, 1600))
     val carro3: Carro = Carro("12-11-AA", Motor(75, 1200))
     val  bicicleta1: Veiculo = Bicicleta("1839912")
@@ -64,6 +64,6 @@ fun main() {
     p4.moverPara(42343,21344)
     println(p4.posicao)
 
-    p4.desligaCarro(carro3)
+    p4.desligaCarro(carro3)*/
     }
 
