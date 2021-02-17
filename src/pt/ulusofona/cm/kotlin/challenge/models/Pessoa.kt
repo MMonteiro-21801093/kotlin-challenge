@@ -21,6 +21,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     var carta: Carta? = null
     var posicao: Posicao
     fun comprarVeiculo(veiculo: Veiculo) {
+        veiculo.atualizaData()
         veiculos.add(veiculo)
     }
 
@@ -44,7 +45,12 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
             }
         }
     }
-
+    fun ligarCarro(carro:Carro){
+        carro.motor.ligar()
+    }
+    fun desligaCarro(carro:Carro){
+    carro.motor.desligar()
+     }
     @Throws(AlterarPosicaoException::class, PessoaSemCartaException::class)
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
         for (veiculo in veiculos) {

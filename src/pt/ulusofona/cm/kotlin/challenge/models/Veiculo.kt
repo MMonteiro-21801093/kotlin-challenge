@@ -7,7 +7,7 @@ import java.util.*
 
 
 
-abstract class Veiculo(var identificador: String) : Movimentavel {
+open abstract class Veiculo(var identificador: String) : Movimentavel {
     var posicao: Posicao
     var dataDeAquisicao: Date
 
@@ -21,5 +21,9 @@ abstract class Veiculo(var identificador: String) : Movimentavel {
 
 
     abstract fun requerCarta(): Boolean
+
+    fun atualizaData() {
+        this.dataDeAquisicao = Date()
+    }
 
 }

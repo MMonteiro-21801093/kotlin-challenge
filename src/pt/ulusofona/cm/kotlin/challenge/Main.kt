@@ -12,9 +12,7 @@ val veiculos: ArrayList<Veiculo> = ArrayList()
 val pessoas: ArrayList<Pessoa> = ArrayList()
 fun main() {
 
-    val formatter = SimpleDateFormat("dd-MM-yyyy")
-    val date = Date()
-    println(formatter.format(date))
+
     /* val p1 = Pessoa("Luis", LocalDate.of(1999, 8, 21))
     val p2 = Pessoa("João", LocalDate.of(2015, 5, 25))
     val p3 = Pessoa("Maria", LocalDate.of(1980, 1, 1))
@@ -42,7 +40,7 @@ fun main() {
 
     val carro1: Veiculo = Carro("12-88-XG", Motor(75, 1200))
     val carro2: Veiculo = Carro("44-18-AF", Motor(100, 1600))
-    val carro3: Veiculo = Carro("12-11-AA", Motor(75, 1200))
+    val carro3: Carro = Carro("12-11-AA", Motor(75, 1200))
     val  bicicleta1: Veiculo = Bicicleta("1839912")
     val  bicicleta2: Veiculo = Bicicleta("1839112")
     val  bicicleta3: Veiculo = Bicicleta("1119912")
@@ -52,70 +50,17 @@ fun main() {
     veiculos.add(bicicleta1)
     veiculos.add(bicicleta2)
     veiculos.add(bicicleta3)
+    val p4 = Pessoa("Pedro", Date())
+    val p5 = Pessoa("Joao", Date())
+    p4.comprarVeiculo(carro1)
+    p4.comprarVeiculo(carro2)
+    p4.comprarVeiculo(carro3)
+    p4.venderVeiculo("12-11-AA",p5)
 
-    for(v in veiculos){
-        println(v.toString())
-    }
-    var opcaoSelecionada :String ? = null
-    mostraMenu()
-    opcaoSelecionada = readLine()!!.toString()
-    do {
-       when(opcaoSelecionada){
-           "0"-> mostraMenu()
-           "1"-> pesquisarVeiculo()
-           "2"-> venderVeiculo()
-           "3"-> moverVeiculo()
-           "4"-> verificaSeTemCarta()
-           "5"-> tirarCarta()
-           "6"-> movimentaPessoa()
-           else-> println("opção inválida")
-           }
-    } while (opcaoSelecionada!="99")
+    println(p5.pesquisarVeiculo("12-11-AA"))
 
 
+
+    p4.desligaCarro(carro3)
     }
 
-fun movimentaPessoa() {
-
-}
-
-fun tirarCarta() {
-
-}
-
-fun verificaSeTemCarta() {
-
-}
-
-fun moverVeiculo() {
-
-}
-
-fun venderVeiculo() {
-
-}
-
-fun pesquisarVeiculo() {
-    println("Introduza o nome da pessoa")
-    val nomePessoa :String = readLine().toString()
-    for(pessoa in pessoas ){
-        if(pessoa.nome.equals(nomePessoa)){
-            println("Introduza o identificador do veiculo")
-            val idVeiculo :String = readLine().toString()
-
-            println(pessoa.pesquisarVeiculo(idVeiculo))
-        }
-    }
-}
-
-fun mostraMenu() {
-    println("MENU")
-    println("0 - Menu inicial")
-    println("1 - Pesquisar veiculo")
-    println("2 - vender veiculo")
-    println("3 - Mover veiculo")
-    println("4 - Verifica se tem carta")
-    println("5 - Tirar a carta")
-    println("6 - Movimenta pessoa")
-    println("99 - Sair")
-}
