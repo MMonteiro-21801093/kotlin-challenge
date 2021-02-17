@@ -39,7 +39,7 @@ class Carro(identificador: String, var motor: Motor) : Veiculo(identificador), L
     }
 
     @Throws(AlterarPosicaoException::class)
-    override fun movimentarPara(x: Int, y: Int) {
+    override fun moverPara(x: Int, y: Int) {
         posicao!!.alterarPosicaoPara(x, y)
         motor.ligado = false
     }

@@ -47,7 +47,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
                 if (veiculo.requerCarta()!! && !temCarta()) {
                     throw PessoaSemCartaException("Nome da Pessoa não tem carta para conduzir o veículo indicado")
                 }
-                veiculo.movimentarPara(x, y)
+                veiculo.moverPara(x, y)
                 break
             }
         }
@@ -76,7 +76,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: Date) : Movimentav
     }
 
     @Throws(AlterarPosicaoException::class)
-    override fun movimentarPara(x: Int, y: Int) {
+    override fun moverPara(x: Int, y: Int) {
         posicao.alterarPosicaoPara(x, y)
     }
 

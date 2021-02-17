@@ -12,7 +12,7 @@ class Bicicleta(identificador: String) : Veiculo(identificador) {
     }
 
     @Throws(AlterarPosicaoException::class)
-    override fun movimentarPara(x: Int, y: Int) {
+    override fun moverPara(x: Int, y: Int) {
         posicao!!.alterarPosicaoPara(x, y)
     }
 }
