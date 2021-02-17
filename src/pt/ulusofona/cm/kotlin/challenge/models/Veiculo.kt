@@ -3,14 +3,12 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.time.LocalDate
 
-abstract class Veiculo : Movimentavel {
+abstract class Veiculo(identificador: String?) : Movimentavel {
     var identificador: String? = null
-       get()= field
-       set(value) {field = value}
-    protected var posicao: Posicao? = null
-    protected var dataDeAquisicao: LocalDate
+    var posicao: Posicao? = null
+    var dataDeAquisicao: LocalDate
 
-    constructor(identificador: String?) {
+    init {
         this.identificador = identificador
         this.posicao = Posicao(0, 0)
         this.dataDeAquisicao = LocalDate.now()

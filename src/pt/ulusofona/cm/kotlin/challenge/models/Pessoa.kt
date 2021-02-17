@@ -12,9 +12,9 @@ import java.time.temporal.ChronoUnit
 import java.util.ArrayList
 
 class Pessoa( val nome: String, private val dataDeNascimento: LocalDate) : Movimentavel {
-    private val veiculos: ArrayList<Veiculo>
-    private var carta: Carta? = null
-    private val posicao: Posicao
+    var veiculos: ArrayList<Veiculo> = ArrayList()
+    var carta: Carta? = null
+    var posicao: Posicao
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
     }
@@ -57,16 +57,16 @@ class Pessoa( val nome: String, private val dataDeNascimento: LocalDate) : Movim
     }
 
     override fun toString(): String {
-        return "Pessoa | nome | data de nascimento | Posicao | x:0 | y:0"
+        return "Pessoa | $nome | $dataDeNascimento | Posicao | x:${this.posicao.x}| y:${this.posicao.y}"
     }
 
     @Throws(MenorDeIdadeException::class)
     fun tirarCarta() {
-        val maisDe18 = ChronoUnit.YEARS.between(dataDeNascimento, LocalDate.now())
-        carta = if (maisDe18 < 18) {
+        val menorDeIdade = ChronoUnit.YEARS.between(dataDeNascimento, LocalDate.now())
+        if (menorDeIdade < 18) {
             throw MenorDeIdadeException("Não pode tirar a carta, Menor de idade")
         } else {
-            Carta()
+            carta = Carta()
         }
     }
 
@@ -76,7 +76,7 @@ class Pessoa( val nome: String, private val dataDeNascimento: LocalDate) : Movim
     }
 
     init {
-        veiculos = ArrayList()
         posicao = Posicao(0, 0)
+        veiculos = ArrayList()
     }
 }
